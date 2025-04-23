@@ -4,9 +4,8 @@
 
 ### Android
 
-https://github.com/user-attachments/assets/40c2da0b-776f-4378-9873-4701afe3fa96
-
-https://github.com/user-attachments/assets/7ca2db8b-cdfc-4a72-bc0a-9113d597c17b
+| ![Screenshot (101)](https://github.com/user-attachments/assets/40c2da0b-776f-4378-9873-4701afe3fa96) | ![Screenshot (102)](https://github.com/user-attachments/assets/7ca2db8b-cdfc-4a72-bc0a-9113d597c17b) |
+|------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
 
 ### Desktop
 
@@ -25,3 +24,6 @@ https://github.com/user-attachments/assets/7ca2db8b-cdfc-4a72-bc0a-9113d597c17b
 ![Screenshot (98)](https://github.com/user-attachments/assets/7eb394a2-a4fe-4b08-8ddc-543b957f59d8)
 ![Screenshot (99)](https://github.com/user-attachments/assets/a09c7894-4e5b-455f-bd20-decf6032553a)
 ![Screenshot (100)](https://github.com/user-attachments/assets/0ca4f83c-1b3e-47ed-b9b8-0a5390ca7045)
+# :feature:accounts module
+## Dependency graph
+![Dependency graph](../../docs/images/graphs-kmp/dep_graph_feature_accounts.svg)

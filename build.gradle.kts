@@ -16,7 +16,6 @@ plugins {
     alias(libs.plugins.kotlin.parcelize) apply false
     alias(libs.plugins.dependencyGuard) apply false
     alias(libs.plugins.firebase.crashlytics) apply false
-    alias(libs.plugins.firebase.appdistribution) apply false
     alias(libs.plugins.firebase.perf) apply false
     alias(libs.plugins.gms) apply false
     alias(libs.plugins.ksp) apply false
@@ -33,7 +32,7 @@ plugins {
     alias(libs.plugins.compose.compiler) apply false
     alias(libs.plugins.kotlinMultiplatform) apply false
     alias(libs.plugins.wire) apply false
-    alias(libs.plugins.ktrofit) apply false
+    alias(libs.plugins.ktorfit) apply false
 }
 
 object DynamicVersion {
@@ -47,4 +46,24 @@ tasks.register("versionFile") {
     val file = File(projectDir, "version.txt")
 
     DynamicVersion.setDynamicVersion(file, project.version.toString())
+}
+
+// Task to print all the module paths in the project e.g. :core:data
+// Used by module graph generator script
+tasks.register("printModulePaths") {
+    subprojects {
+        if (subprojects.size == 0) {
+            println(this.path)
+        }
+    }
+}
+
+// Configuration for CMP module dependency graph
+moduleGraphAssert {
+    configurations += setOf("commonMainImplementation", "commonMainApi")
+    configurations += setOf("androidMainImplementation", "androidMainApi")
+    configurations += setOf("desktopMainImplementation", "desktopMainApi")
+    configurations += setOf("jsMainImplementation", "jsMainApi")
+    configurations += setOf("nativeMainImplementation", "nativeMainApi")
+    configurations += setOf("wasmJsMainImplementation", "wasmJsMainApi")
 }
